@@ -19,5 +19,12 @@ dependencies {
 
     implementation("com.github.0xera:inspection-lib:1.0.0")
     implementation("com.facebook.flipper:flipper-jetpack-compose-plugin:0.267.1")
+    
+    // or
+
+    implementation("com.github.0xera:inspection-lib:1.0.0")
+    implementation("com.facebook.flipper:flipper-jetpack-compose-plugin:0.267.1") {
+        exclude(group = "flipper", module = "inspection-lib")
+    }
 }
 ```

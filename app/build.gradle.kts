@@ -50,14 +50,11 @@ android {
 }
 
 dependencies {
-    modules {
-        module("flipper:inspection-lib") {
-            replacedBy("com.github.0xera:inspection-lib")
-        }
-    }
     implementation("com.github.0xera:inspection-lib:1.0.0")
+    implementation("com.facebook.flipper:flipper-jetpack-compose-plugin:0.267.1") {
+        exclude(group = "flipper", module = "inspection-lib")
+    }
     implementation("com.facebook.flipper:flipper:0.267.1")
-    implementation("com.facebook.flipper:flipper-jetpack-compose-plugin:0.267.1")
     implementation("com.facebook.soloader:soloader:0.10.5")
 
     implementation(libs.androidx.core.ktx)
